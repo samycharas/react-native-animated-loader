@@ -56,7 +56,7 @@ export default class AnimatedLoader extends React.PureComponent {
   };
 
   render() {
-    const { visible, overlayColor, animationType } = this.props;
+    const { visible, overlayColor, animationType, style } = this.props;
 
     return (
       <Modal
@@ -66,7 +66,7 @@ export default class AnimatedLoader extends React.PureComponent {
         supportedOrientations={['portrait']}
         onRequestClose={() => {}}
       >
-        <View style={[styles.container, { backgroundColor: overlayColor }]}>
+        <View style={[style, { backgroundColor: overlayColor }]}>
           <View>{this._renderLottie()}</View>
           {this.props.children}
         </View>
